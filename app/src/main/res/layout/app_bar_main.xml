@@ -15,10 +15,51 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
             app:popupTheme="@style/Theme.WeatherApp.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
+
+<!--    app:popupTheme="@style/Theme.WeatherApp.PopupOverlay" />-->
+<!--app:contentScrim="?attr/colorPrimary"-->
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="300dp"-->
+<!--        app:liftOnScroll="true"-->
+<!--        android:background="@drawable/ic_header">-->
+
+<!--        <com.google.android.material.appbar.CollapsingToolbarLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:collapsedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Collapsed"-->
+<!--            app:expandedTitleMarginStart="72dp"-->
+<!--            app:expandedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Expanded"-->
+<!--            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"-->
+<!--            app:statusBarScrim="?attr/colorPrimaryVariant"-->
+<!--            app:contentScrim="?attr/colorPrimary">-->
+
+<!--            <com.google.android.material.appbar.MaterialToolbar-->
+<!--                android:id="@+id/toolbar"-->
+<!--                style="@style/Widget.MaterialComponents.Toolbar.Primary"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="?attr/actionBarSize"-->
+<!--                android:background="#00FFFFFF"-->
+<!--                android:elevation="0dp"-->
+<!--                app:layout_collapseMode="pin"-->
+<!--                app:layout_scrollFlags="scroll|enterAlways|snap"-->
+<!--                app:navigationIcon="@drawable/ic_map"-->
+<!--                app:title="home" />-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_margin="100dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:src="@drawable/ic_snowstorm"-->
+<!--                app:layout_collapseMode="parallax"></ImageView>-->
+
+<!--        </com.google.android.material.appbar.CollapsingToolbarLayout>-->
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
 
     <include layout="@layout/content_main" />
 

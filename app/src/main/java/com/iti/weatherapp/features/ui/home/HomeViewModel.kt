@@ -27,7 +27,7 @@ class HomeViewModel(val repo: WeatherRepo? = null) : BaseViewModel() {
 
     fun getItems(lat: String, lon: String) {
         repo?.let {
-            compositeDisposable.add(it.getItemsList(lat, lon, "ar")
+            compositeDisposable.add(it.getItemsList(lat, lon, "en")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { weather: Weather?, error: Throwable? ->

@@ -59,7 +59,7 @@ class PlaceAdapter(private val context: Context?, private val delegate: PlaceAda
         }
 
         init {
-            titleTextView = layout.findViewById<TextView>(R.id.titleTextView)
+            titleTextView = layout.findViewById<TextView>(R.id.dayTextView)
             addressTextView = layout.findViewById<TextView>(R.id.addressTextView)
             categoryTextView = layout.findViewById<TextView>(R.id.categoryTextView)
             linearLayout = layout.findViewById<LinearLayout>(R.id.row)

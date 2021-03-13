@@ -18,6 +18,7 @@ interface WeatherApiInterface {
         @Query("lat") lat: String?,
         @Query("lon") lon: String?,
         @Query("lang") lang: String?,
+        @Query("units") units: String?,
         @Query("appid") appid: String?
     ): Single<Weather>
 }

@@ -13,7 +13,7 @@ object WeatherRepo : WeatherRepoInterface {
 
     //MARK: - API Calls Methods
     override fun getItemsList(lat: String, lon: String, lang:String): Single<Weather> {
-        return WeatherApiClient.api.getWeather(lat,lon,lang , Constants.WEATHER_API_KEY)
+        return WeatherApiClient.api.getWeather(lat,lon,lang , "metric",Constants.WEATHER_API_KEY)
     }
 
 }

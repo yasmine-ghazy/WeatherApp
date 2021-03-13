@@ -26,7 +26,7 @@ data class DailyItem(
 	val feelsLike: FeelsLike? = null,
 
 	@field:SerializedName("dt")
-	val dt: Int? = null,
+	val dt: Long? = null,
 
 	@field:SerializedName("pop")
 	val pop: Double? = null,
