@@ -5,18 +5,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.iti.weatherapp.databinding.HourlyWeatherRowLayoutBinding
+import com.iti.weatherapp.databinding.RowHourlyWeatherBinding
 import com.iti.weatherapp.helper.UIHelper
-import com.iti.weatherapp.model.DailyItem
 import com.iti.weatherapp.model.HourlyItem
 
 
 class HourlyWeatherAdapter(private var items: List<HourlyItem?> = listOf()) : RecyclerView.Adapter<HourlyWeatherAdapter.ViewHolder>() {
 
-    lateinit var viewBinding: HourlyWeatherRowLayoutBinding
+    lateinit var viewBinding: RowHourlyWeatherBinding
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        viewBinding = HourlyWeatherRowLayoutBinding.inflate(
+        viewBinding = RowHourlyWeatherBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -28,8 +27,8 @@ class HourlyWeatherAdapter(private var items: List<HourlyItem?> = listOf()) : Re
 
         items.get(position)?.let {item ->
             holder.myView.dayTextView.text = item.dt?.let { UIHelper.getDateCurrentTimeZone(it, "hh:mm a") }
-            holder.myView.descTextView.text = item.weather?.get(0)?.description
-            holder.myView.tempTextView.text = item.temp?.let {temp -> "${temp}℃"  }
+            //holder.myView.descTextView.text = item.weather?.get(0)?.description
+            holder.myView.tempTextView.text = item.temp?.let {temp -> "${temp}${UIHelper.getTempSympol()}"  }
             item.weather?.get(0)?.icon?.let { icon ->
                 val iconUrl = "http://openweathermap.org/img/w/$icon.png"
                 Glide.with(viewBinding.root).load(iconUrl).apply(RequestOptions()).into(holder.myView.imageView)
@@ -47,5 +46,5 @@ class HourlyWeatherAdapter(private var items: List<HourlyItem?> = listOf()) : Re
         this.notifyDataSetChanged()
     }
 
-    class ViewHolder(var myView: HourlyWeatherRowLayoutBinding) : RecyclerView.ViewHolder(myView.root)
+    class ViewHolder(var myView: RowHourlyWeatherBinding) : RecyclerView.ViewHolder(myView.root)
 }

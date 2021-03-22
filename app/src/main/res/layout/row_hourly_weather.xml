@@ -8,19 +8,17 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="100dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         app:cardCornerRadius="15dp"
         app:flow_wrapMode="aligned"
         app:layout_constraintBottom_toTopOf="@id/dayTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:orientation="vertical">
 
@@ -29,17 +27,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="SubTitle"
-                android:textSize="20sp" />
+                android:text="12.00"
+                android:textSize="16sp"
+                android:layout_marginTop="25dp"/>
 
-            <TextView
-                android:id="@+id/descTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Title"
-                android:textSize="16sp" />
-        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 
@@ -48,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Title"
+        android:text="12:00am"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,9 +49,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:scaleType="fitXY"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
         android:translationZ="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

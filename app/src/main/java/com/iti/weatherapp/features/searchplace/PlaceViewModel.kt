@@ -2,7 +2,7 @@ package com.iti.weatherapp.features.searchplace
 
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
-import com.iti.weatherapp.model.model.Place
+import com.iti.weatherapp.model.City
 import com.iti.weatherapp.repo.PlaceRepo
 import com.iti.weatherapp.repo.PlaceRepoInterface
 import io.reactivex.Observable
@@ -16,8 +16,8 @@ import io.reactivex.subjects.PublishSubject
 import java.util.concurrent.TimeUnit
 
 class PlaceViewModel : ViewModel() {
-    var itemsList: MediatorLiveData<List<Place>> = MediatorLiveData<List<Place>>()
-    var selectedItem: MediatorLiveData<Place?> = MediatorLiveData<Place?>()
+    var itemsList: MediatorLiveData<List<City>> = MediatorLiveData<List<City>>()
+    var selectedItem: MediatorLiveData<City?> = MediatorLiveData<City?>()
     private val repo: PlaceRepoInterface
     var compositeDisposable = CompositeDisposable()
     val subject = PublishSubject.create<String>()
@@ -33,19 +33,19 @@ class PlaceViewModel : ViewModel() {
     fun addSubject() {
         subject.debounce(100, TimeUnit.MILLISECONDS)
             .distinctUntilChanged()
-            .switchMap(object : Function<String?, Observable<List<Place>>> {
-                override fun apply(query: String): Observable<List<Place>>? {
+            .switchMap(object : Function<String?, Observable<List<City>>> {
+                override fun apply(query: String): Observable<List<City>>? {
                     return repo.getItemsList(query)
                         .subscribeOn(Schedulers.io())
                 }
             }).observeOn(AndroidSchedulers.mainThread())
-            .subscribe(object : Observer<List<Place>> {
+            .subscribe(object : Observer<List<City>> {
                 override fun onSubscribe(d: Disposable) {
                     compositeDisposable.add(d)
                 }
 
-                override fun onNext(places: List<Place>) {
-                    itemsList.setValue(places)
+                override fun onNext(cities: List<City>) {
+                    itemsList.setValue(cities)
                 }
 
                 override fun onError(e: Throwable) {

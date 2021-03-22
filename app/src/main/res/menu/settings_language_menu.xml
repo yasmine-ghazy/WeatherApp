@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/english"
+        android:title="@string/english"
+        android:checkable="true"
+        android:orderInCategory="0"/>
+    <item
+        android:id="@+id/arabic"
+        android:title="@string/arabic"
+        android:checkable="true"
+        android:orderInCategory="1"/>
+</menu>

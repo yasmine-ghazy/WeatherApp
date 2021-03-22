@@ -6,31 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".features.ui.favourites.FavouritesFragment">
 
-    <TextView
-        android:id="@+id/text_favourites"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
+        android:id="@+id/fragment_container_view">
+
+    </androidx.fragment.app.FragmentContainerView>
+
+    <TextView
+        android:id="@+id/noDataTV"
+        android:gravity="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="@dimen/fab_margin"
-                app:srcCompat="@android:drawable/ic_dialog_email" />
-
+        android:layout_height="match_parent"
+        android:text="@string/no_data_available"
+        android:visibility="visible" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

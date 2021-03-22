@@ -1,16 +1,40 @@
 <resources>
     <string name="app_name">Cloudy</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Cloudy</string>
-    <string name="nav_header_subtitle">What is the weather?</string>
-    <string name="nav_header_desc">All you need to know</string>
     <string name="action_settings">Settings</string>
+
+    <!--Menu Items-->
     <string name="menu_home">Home</string>
     <string name="menu_favourites">Favourites</string>
     <string name="menu_settings">Settings</string>
+    <string name="menu_alerts">Alerts</string>
+
+    <!--SearchPlaces-->
     <string name="searchPlaceHint">Search for a country</string>
-    <string name="fa_icon_areachart">&#xf1fe;</string>
-    <string name="fa_icon_piechart">&#xf200;</string>
-    <string name="fa_icon_linechart">&#xf201;</string>
+    <string name="user">User</string>
+    <string name="application">Application</string>
+    <string name="language">Language</string>
+    <string name="location">Location</string>
+    <string name="weather">Weather</string>
+    <string name="temperature">Temperature</string>
+    <string name="windSpeed">Wind Speed</string>
+    <string name="alerts">Alerts</string>
+    <string name="notifications">Notifications</string>
+    <string name="type">Type</string>
+    <string name="time">Time</string>
+    <string name="arabic">Arabic</string>
+    <string name="english">English</string>
+    <string name="GPS">GPS</string>
+    <string name="map">Map</string>
+    <string name="celsius">Celsius</string>
+    <string name="kelvin">Kelvin</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="alarm">Alarm</string>
+    <string name="notification">Notification</string>
+    <string name="meter_sec">Meter/Sec</string>
+    <string name="mile_hour">Mile/Hour</string>
+    <string name="selectTime">Select Time</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="no_data_available">No Data Available</string>
+    <string name="delete_city">Are you sure you wanna delete this city?</string>
+
 </resources>

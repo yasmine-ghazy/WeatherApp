@@ -23,14 +23,14 @@
             android:layout_height="match_parent"
             android:padding="16dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_map" />
+            android:src="@drawable/ic_map"
+            app:tint="?colorPrimary" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.8"
             android:orientation="vertical"
-            android:weightSum="4"
             android:padding="6dp">
 
             <TextView
@@ -46,7 +46,7 @@
                 android:id="@+id/addressTextView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:text="Subtitle"
                 android:textSize="14sp" />
 

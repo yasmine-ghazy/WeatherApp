@@ -5,17 +5,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.iti.weatherapp.databinding.DailyWeatherRowLayoutBinding
+import com.iti.weatherapp.databinding.RowDailyWeatherBinding
 import com.iti.weatherapp.helper.UIHelper
 import com.iti.weatherapp.model.DailyItem
 
 
 class DailyWeatherAdapter(private var items: List<DailyItem?> = listOf()) : RecyclerView.Adapter<DailyWeatherAdapter.ViewHolder>() {
 
-    lateinit var viewBinding: DailyWeatherRowLayoutBinding
+    lateinit var viewBinding: RowDailyWeatherBinding
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        viewBinding = DailyWeatherRowLayoutBinding.inflate(
+        viewBinding = RowDailyWeatherBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -28,7 +28,7 @@ class DailyWeatherAdapter(private var items: List<DailyItem?> = listOf()) : Recy
         items.get(position)?.let {item ->
             holder.myView.dayTextView.text = item.dt?.let { UIHelper.getDateCurrentTimeZone(it, "EEEE") }
             holder.myView.descTextView.text = item.weather?.get(0)?.description
-            holder.myView.tempTextView.text = item.temp?.let {temp -> "${temp.max}℃"  }
+            holder.myView.tempTextView.text = item.temp?.let {temp -> "${temp.max}${UIHelper.getTempSympol()}"  }
             item.weather?.get(0)?.icon?.let { icon ->
                 val iconUrl = "http://openweathermap.org/img/w/$icon.png"
                 Glide.with(viewBinding.root).load(iconUrl).apply(RequestOptions()).into(holder.myView.imageView)
@@ -46,5 +46,5 @@ class DailyWeatherAdapter(private var items: List<DailyItem?> = listOf()) : Recy
         this.notifyDataSetChanged()
     }
 
-    class ViewHolder(var myView: DailyWeatherRowLayoutBinding) : RecyclerView.ViewHolder(myView.root)
+    class ViewHolder(var myView: RowDailyWeatherBinding) : RecyclerView.ViewHolder(myView.root)
 }

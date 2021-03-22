@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "app_name"> غائم </string>
+    <string name = "action_settings"> الإعدادات </string>
+
+    <string name = "menu_home"> الصفحة الرئيسية </string>
+    <string name = "menu_favourites"> المفضلة </string>
+    <string name = "menu_settings"> الإعدادات </string>
+    <string name = "menu_alerts"> التنبيهات </string>
+
+    <string name = "searchPlaceHint"> ابحث عن بلد </string>
+    <string name = "user"> مستخدم </string>
+    <string name = "application"> التطبيق </string>
+    <string name = "language"> اللغة </string>
+    <string name = "location"> الموقع </string>
+    <string name = "weather"> الطقس </string>
+    <string name = "temperature"> درجة الحرارة </string>
+    <string name = "windSpeed"> سرعة الرياح </string>
+    <string name = "alerts"> التنبيهات </string>
+    <string name = "notifications"> الإخطارات </string>
+    <string name = "type"> النوع </string>
+    <string name = "time"> الوقت </string>
+    <string name = "arabic"> العربية </string>
+    <string name = "english"> الإنجليزية </string>
+    <string name = "GPS"> GPS </string>
+    <string name = "map"> خريطة </string>
+    <string name = "celsius"> مئوية </string>
+    <string name = "kelvin"> كلفن </string>
+    <string name = "fahrenheit"> فهرنهايت </string>
+    <string name = "alarm"> منبه </string>
+    <string name = "notification"> اشعار </string>
+    <string name = "meter_sec"> عداد / ثانية </string>
+    <string name = "mile_hour"> ميل / ساعة </string>
+    <string name = "selectTime"> حدد الوقت </string>
+    <string name="title_activity_maps">الخريطة</string>
+    <string name="no_data_available">لا توجد بيانات متاحة</string>
+    <string name="delete_city">هل انت متآكد انك تريد حذف هذه المدينة؟</string>
+
+</resources>

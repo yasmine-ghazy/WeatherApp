@@ -3,12 +3,9 @@ package com.iti.weatherapp.features.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.iti.weatherapp.helper.viewmodel.BaseViewModel
 import com.iti.weatherapp.model.Weather
-import com.iti.weatherapp.repo.BaseRepo
 import com.iti.weatherapp.repo.WeatherRepo
-import com.iti.weatherapp.repo.WeatherRepoInterface
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -25,9 +22,9 @@ class HomeViewModel(val repo: WeatherRepo? = null) : BaseViewModel() {
 
     var compositeDisposable = CompositeDisposable()
 
-    fun getItems(lat: String, lon: String) {
+    fun getItems(lat: Double?, lon: Double?) {
         repo?.let {
-            compositeDisposable.add(it.getItemsList(lat, lon, "en")
+            compositeDisposable.add(it.getItemsList(lat, lon)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { weather: Weather?, error: Throwable? ->

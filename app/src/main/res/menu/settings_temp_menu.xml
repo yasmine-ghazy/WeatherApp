@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/celsius"
+        android:title="@string/celsius"
+        android:checkable="true"
+        android:orderInCategory="0"/>
+    <item
+        android:id="@+id/kelvin"
+        android:title="@string/kelvin"
+        android:checkable="true"
+        android:orderInCategory="1"/>
+    <item
+        android:id="@+id/fahrenheit"
+        android:title="@string/fahrenheit"
+        android:checkable="true"
+        android:orderInCategory="2"/>
+</menu>

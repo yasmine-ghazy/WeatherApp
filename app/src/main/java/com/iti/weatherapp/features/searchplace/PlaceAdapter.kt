@@ -1,6 +1,5 @@
 package com.iti.weatherapp.features.searchplace
 
-import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,23 +8,24 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.iti.weatherapp.R
-import com.iti.weatherapp.model.model.Place
+import com.iti.weatherapp.model.City
 import java.util.*
 
 interface PlaceAdapterDelegate {
-    fun itemClicked(place: Place?)
+    fun itemClicked(city: City?)
 }
 
-class PlaceAdapter(private val context: Context?, private val delegate: PlaceAdapterDelegate) :
+class PlaceAdapter(private val delegate: PlaceAdapterDelegate) :
     RecyclerView.Adapter<PlaceAdapter.ViewHolder?>() {
-    private var items: List<Place> = ArrayList<Place>()
-    fun setItems(items: List<Place>) {
+
+    private var items: List<City> = ArrayList<City>()
+    fun setItems(items: List<City>) {
         this.items = items
     }
 
     override fun onCreateViewHolder(recyclerview: ViewGroup, viewType: Int): ViewHolder {
         val inflater: LayoutInflater = LayoutInflater.from(recyclerview.getContext())
-        val v: View = inflater.inflate(R.layout.place_row_layout, recyclerview, false)
+        val v: View = inflater.inflate(R.layout.row_place, recyclerview, false)
         val vh: ViewHolder = ViewHolder(v)
         Log.i(TAG, "==== onCreateViewHolder ====")
         return vh
@@ -47,10 +47,10 @@ class PlaceAdapter(private val context: Context?, private val delegate: PlaceAda
         var addressTextView: TextView
         var categoryTextView: TextView
         var linearLayout: LinearLayout
-        fun configure(item: Place) {
-            titleTextView.setText(item.title)
-            addressTextView.setText(item.vicinity)
-            categoryTextView.setText(item.categoryTitle)
+        fun configure(item: City) {
+            titleTextView.setText(item.city)
+            addressTextView.setText(item.region)
+            categoryTextView.setText(item.country)
             linearLayout.setOnClickListener(View.OnClickListener { v: View? ->
                 delegate.itemClicked(
                     item

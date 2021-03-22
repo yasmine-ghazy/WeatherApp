@@ -1,5 +1,6 @@
 package com.iti.weatherapp.helper
 
+import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -18,5 +19,11 @@ object UIHelper {
         return ""
     }
 
-
+    fun getTempSympol(): String{
+        return when(SharedPreferenceHelper.readInt(SharedKey.TEMP)){
+            0 -> "℃"
+            1 -> "K"
+            else -> "℉"
+        }
+    }
 }
